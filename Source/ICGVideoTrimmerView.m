@@ -302,12 +302,12 @@
         self.imageGenerator.maximumSize = CGSizeMake(CGRectGetWidth(self.frameView.frame), CGRectGetHeight(self.frameView.frame));
     }
     
-    CGFloat picWidth = 0;
+    CGFloat picWidth = 1;
     
     // First image
     NSError *error;
     CMTime actualTime;
-    CGImageRef halfWayImage = [self.imageGenerator copyCGImageAtTime:kCMTimeZero actualTime:&actualTime error:&error];
+    CGImageRef halfWayImage = [self.imageGenerator copyCGImageAtTime:CMTimeMake(6, 30) actualTime:&actualTime error:&error];
     UIImage *videoScreen;
     if ([self isRetina]){
         videoScreen = [[UIImage alloc] initWithCGImage:halfWayImage scale:2.0 orientation:UIImageOrientationUp];
